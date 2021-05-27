@@ -1,0 +1,1 @@
+insert into persona (id,nombre,apellido,telefono,identificacion,cantidadConsignada) values(:id,:nombre,:apellido,:telefono,:identificacion,:cantidadConsignada)
