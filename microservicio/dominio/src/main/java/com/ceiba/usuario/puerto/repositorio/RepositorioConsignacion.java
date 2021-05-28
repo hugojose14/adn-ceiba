@@ -1,22 +1,21 @@
 package com.ceiba.usuario.puerto.repositorio;
 
-import com.ceiba.usuario.modelo.entidad.Persona;
-import com.ceiba.usuario.modelo.entidad.Usuario;
+import com.ceiba.usuario.modelo.entidad.Consignacion;
 
 public interface RepositorioPersona {
 
     /**
      * Permite crear un usuario
-     * @param persona
+     * @param consignacion
      * @return el id generado
      */
-    Long crear(Persona persona);
+    Long crear(Consignacion consignacion);
 
     /**
      * Permite actualizar un usuario
-     * @param persona
+     * @param consignacion
      */
-    void actualizar(Persona persona);
+    void actualizar(Consignacion consignacion);
 
     /**
      * Permite eliminar un persona

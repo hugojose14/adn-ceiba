@@ -1,14 +1,14 @@
 package com.ceiba.usuario.comando.fabrica;
 
-import com.ceiba.usuario.comando.ComandoPersona;
-import com.ceiba.usuario.modelo.entidad.Persona;
+import com.ceiba.usuario.comando.ComandoConsignacion;
+import com.ceiba.usuario.modelo.entidad.Consignacion;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FabricaPersona {
 
-    public Persona crear(ComandoPersona comandoPersona){
-        return new Persona(
+    public Consignacion crear(ComandoConsignacion comandoPersona){
+        return new Consignacion(
                 comandoPersona.getId(),
                 comandoPersona.getNombre(),
                 comandoPersona.getApellido(),

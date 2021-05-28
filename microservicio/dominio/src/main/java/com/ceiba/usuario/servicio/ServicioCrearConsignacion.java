@@ -1,6 +1,6 @@
 package com.ceiba.usuario.servicio;
 
-import com.ceiba.usuario.modelo.entidad.Persona;
+import com.ceiba.usuario.modelo.entidad.Consignacion;
 import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
 
 public class ServicioCrearPersonas {
@@ -11,7 +11,7 @@ public class ServicioCrearPersonas {
         this.personaRepositorio = personaRepositorio;
     }
 
-    public Long ejecutar(Persona persona){
+    public Long ejecutar(Consignacion persona){
         return this.personaRepositorio.crear(persona);
     }
 

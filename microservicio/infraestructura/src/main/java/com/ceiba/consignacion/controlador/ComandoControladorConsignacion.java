@@ -1,4 +1,4 @@
-package com.ceiba.usuario.controlador;
+package com.ceiba.consignacion.controlador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.usuario.comando.ComandoPersona;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/personas")
+@RequestMapping("/consignacion")
 @Api(tags = {"controlador para las consignaciones de las personas"})
 public class ComandoControladorPersona {
 
@@ -22,7 +22,7 @@ public class ComandoControladorPersona {
     }
 
     @PostMapping
-    @ApiOperation("Crear personas")
+    @ApiOperation("Crear consignaciones")
     public ComandoRespuesta<Long>  crear(@RequestBody ComandoPersona comandoPersona){
         return manejadorCrearPersona.ejecutar(comandoPersona);
     }
