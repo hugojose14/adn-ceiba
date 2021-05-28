@@ -1,5 +1,6 @@
 package com.ceiba.dominio;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.ceiba.dominio.excepcion.ExcepcionConsignacionValorRango;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
@@ -94,4 +96,12 @@ public class ValidadorArgumento {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
+
+    public static void validarCantidadConsignada(BigDecimal cantidad, String mensaje){
+        if(cantidad.compareTo(new BigDecimal(1000)) <= 1
+                || cantidad.compareTo(new BigDecimal(1000000)) <= 1){
+            throw new ExcepcionConsignacionValorRango(mensaje);
+        }
+    }
+
 }

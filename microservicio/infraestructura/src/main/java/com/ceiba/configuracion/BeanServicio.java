@@ -28,9 +28,8 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioCrearConsignacion servicioCrearPersonas(RepositorioConsignacion repositorioPersona){
-        System.out.println("prueba");
-        return new ServicioCrearConsignacion(repositorioPersona);
+    public ServicioCrearConsignacion servicioCrearPersonas(RepositorioConsignacion repositorioConsignacion){
+        return new ServicioCrearConsignacion(repositorioConsignacion);
     }
 	
 
