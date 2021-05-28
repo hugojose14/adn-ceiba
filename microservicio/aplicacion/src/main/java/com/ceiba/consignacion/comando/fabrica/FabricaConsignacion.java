@@ -1,7 +1,7 @@
-package com.ceiba.usuario.comando.fabrica;
+package com.ceiba.consignacion.comando.fabrica;
 
-import com.ceiba.usuario.comando.ComandoConsignacion;
-import com.ceiba.usuario.modelo.entidad.Consignacion;
+import com.ceiba.consignacion.comando.ComandoConsignacion;
+import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import org.springframework.stereotype.Component;
 
 @Component

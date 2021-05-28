@@ -2,8 +2,8 @@ package com.ceiba.consignacion.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.modelo.entidad.Consignacion;
-import com.ceiba.usuario.puerto.repositorio.RepositorioConsignacion;
+import com.ceiba.consignacion.modelo.entidad.Consignacion;
+import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 import org.springframework.stereotype.Repository;
 
 @Repository

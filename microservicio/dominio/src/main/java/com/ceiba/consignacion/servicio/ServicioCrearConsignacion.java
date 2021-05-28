@@ -1,7 +1,7 @@
-package com.ceiba.usuario.servicio;
+package com.ceiba.consignacion.servicio;
 
-import com.ceiba.usuario.modelo.entidad.Consignacion;
-import com.ceiba.usuario.puerto.repositorio.RepositorioConsignacion;
+import com.ceiba.consignacion.modelo.entidad.Consignacion;
+import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 
 public class ServicioCrearConsignacion {
 

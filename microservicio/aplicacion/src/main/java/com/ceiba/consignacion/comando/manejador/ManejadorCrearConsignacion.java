@@ -1,11 +1,11 @@
-package com.ceiba.usuario.comando.manejador;
+package com.ceiba.consignacion.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoConsignacion;
-import com.ceiba.usuario.comando.fabrica.FabricaConsignacion;
-import com.ceiba.usuario.modelo.entidad.Consignacion;
-import com.ceiba.usuario.servicio.ServicioCrearConsignacion;
+import com.ceiba.consignacion.comando.ComandoConsignacion;
+import com.ceiba.consignacion.comando.fabrica.FabricaConsignacion;
+import com.ceiba.consignacion.modelo.entidad.Consignacion;
+import com.ceiba.consignacion.servicio.ServicioCrearConsignacion;
 import org.springframework.stereotype.Component;
 
 @Component

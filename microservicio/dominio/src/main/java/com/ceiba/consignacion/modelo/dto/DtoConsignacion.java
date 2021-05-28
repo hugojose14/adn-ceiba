@@ -1,17 +1,13 @@
-package com.ceiba.usuario.comando;
+package com.ceiba.consignacion.modelo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class ComandoConsignacion {
+public class DtoConsignacion {
 
     private Long id;
     private String nombre;
