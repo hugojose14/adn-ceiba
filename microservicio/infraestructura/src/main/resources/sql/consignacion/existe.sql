@@ -1,0 +1,1 @@
+select  count(*) from consignacion where id = :id

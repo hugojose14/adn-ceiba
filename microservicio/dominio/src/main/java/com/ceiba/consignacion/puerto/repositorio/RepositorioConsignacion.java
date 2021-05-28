@@ -2,6 +2,9 @@ package com.ceiba.consignacion.puerto.repositorio;
 
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 
+import java.math.BigDecimal;
+import java.util.Optional;
+
 public interface RepositorioConsignacion {
 
     /**
@@ -25,9 +28,9 @@ public interface RepositorioConsignacion {
 
     /**
      * Permite validar si existe un usuario con un cedula
-     * @param identificacion
+     * @param id
      * @return si existe o no
      */
-    boolean existe(String identificacion);
+    boolean existe(Long id);
 
 }

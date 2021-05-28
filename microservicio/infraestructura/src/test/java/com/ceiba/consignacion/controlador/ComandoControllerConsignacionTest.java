@@ -2,8 +2,7 @@ package com.ceiba.consignacion.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.consignacion.comando.ComandoConsignacion;
-import com.ceiba.consignacion.testdatabuilder.ComandoConsignacionTestDataBuilder;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoUsuarioTestDataBuilder;
+import com.ceiba.consignacion.servicio.ComandoConsignacionTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

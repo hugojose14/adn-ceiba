@@ -1,7 +1,6 @@
-package com.ceiba.consignacion.testdatabuilder;
+package com.ceiba.consignacion.servicio;
 
 import com.ceiba.consignacion.comando.ComandoConsignacion;
-import com.ceiba.usuario.comando.ComandoUsuario;
 
 import java.math.BigDecimal;
 import java.util.UUID;

@@ -1,1 +1,1 @@
-insert into consignacion (id,nombre,apellido,telefono,identificacion,cantidadConsignada) values(:id,:nombre,:apellido,:telefono,:identificacion,:cantidadConsignada)
+insert into consignacion (id,nombre,apellido,telefono,identificacion,cantidadConsignada, direccion) values(:id,:nombre,:apellido,:telefono,:identificacion,:cantidadConsignada, :direccion)

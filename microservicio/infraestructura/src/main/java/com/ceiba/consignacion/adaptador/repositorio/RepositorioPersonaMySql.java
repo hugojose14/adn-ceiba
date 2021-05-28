@@ -4,7 +4,13 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
+
+import java.math.BigDecimal;
+import java.util.Optional;
 
 @Repository
 public class RepositorioPersonaMySql implements RepositorioConsignacion {
@@ -13,6 +19,10 @@ public class RepositorioPersonaMySql implements RepositorioConsignacion {
 
     @SqlStatement(namespace="consignacion", value="crear")
     private static String sqlCrear;
+
+    @SqlStatement(namespace = "consignacion", value ="existe")
+    private static String sqlExiste;
+
 
     public RepositorioPersonaMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -34,7 +44,11 @@ public class RepositorioPersonaMySql implements RepositorioConsignacion {
     }
 
     @Override
-    public boolean existe(String cedula) {
-        return false;
+    public boolean existe(Long id) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("id", id);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,parameterSource, Boolean.class);
     }
+
+
 }

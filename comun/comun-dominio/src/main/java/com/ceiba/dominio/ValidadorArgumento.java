@@ -97,9 +97,9 @@ public class ValidadorArgumento {
         }
     }
 
-    public static void validarCantidadConsignada(BigDecimal cantidad, String mensaje){
-        if(cantidad.compareTo(new BigDecimal(1000)) <= 1
-                || cantidad.compareTo(new BigDecimal(1000000)) <= 1){
+    public static void validarCantidadConsignada(BigDecimal cantidad, BigDecimal cantidadMaxima, BigDecimal cantidadMinima,String mensaje){
+        if(!(cantidad.compareTo(cantidadMinima) == 1
+                || cantidadMaxima.compareTo(cantidad) == -1)){
             throw new ExcepcionConsignacionValorRango(mensaje);
         }
     }
