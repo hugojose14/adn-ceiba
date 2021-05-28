@@ -9,12 +9,12 @@ import com.ceiba.usuario.servicio.ServicioCrearConsignacion;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearConsignaciones implements ManejadorComandoRespuesta<ComandoConsignacion, ComandoRespuesta<Long>> {
+public class ManejadorCrearConsignacion implements ManejadorComandoRespuesta<ComandoConsignacion, ComandoRespuesta<Long>> {
 
     private final FabricaConsignacion fabricaConsignacion;
     private final ServicioCrearConsignacion servicioCrearConsignacion;
 
-    public ManejadorCrearConsignaciones(FabricaConsignacion fabricaConsignacion, ServicioCrearConsignacion servicioCrearConsignacion){
+    public ManejadorCrearConsignacion(FabricaConsignacion fabricaConsignacion, ServicioCrearConsignacion servicioCrearConsignacion){
         this.fabricaConsignacion = fabricaConsignacion;
         this.servicioCrearConsignacion = servicioCrearConsignacion;
     }

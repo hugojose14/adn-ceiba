@@ -6,7 +6,7 @@ create table usuario (
  primary key (id)
 );
 
-create table persona (
+create table consignacion (
  id int(11) not null auto_increment,
  nombre varchar(100) not null,
  apellido varchar(100),

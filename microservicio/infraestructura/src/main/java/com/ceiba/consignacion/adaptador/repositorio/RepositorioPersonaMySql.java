@@ -1,17 +1,17 @@
-package com.ceiba.usuario.adaptador.repositorio;
+package com.ceiba.consignacion.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.modelo.entidad.Persona;
-import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
+import com.ceiba.usuario.modelo.entidad.Consignacion;
+import com.ceiba.usuario.puerto.repositorio.RepositorioConsignacion;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class RepositorioPersonaMySql implements RepositorioPersona {
+public class RepositorioPersonaMySql implements RepositorioConsignacion {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace="persona", value="crear")
+    @SqlStatement(namespace="consignacion", value="crear")
     private static String sqlCrear;
 
     public RepositorioPersonaMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -19,12 +19,12 @@ public class RepositorioPersonaMySql implements RepositorioPersona {
     }
 
     @Override
-    public Long crear(Persona persona) {
-        return this.customNamedParameterJdbcTemplate.crear(persona,sqlCrear);
+    public Long crear(Consignacion consignacion) {
+        return this.customNamedParameterJdbcTemplate.crear(consignacion,sqlCrear);
     }
 
     @Override
-    public void actualizar(Persona persona) {
+    public void actualizar(Consignacion persona) {
 
     }
 

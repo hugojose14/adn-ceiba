@@ -2,7 +2,7 @@ package com.ceiba.usuario.puerto.repositorio;
 
 import com.ceiba.usuario.modelo.entidad.Consignacion;
 
-public interface RepositorioPersona {
+public interface RepositorioConsignacion {
 
     /**
      * Permite crear un usuario

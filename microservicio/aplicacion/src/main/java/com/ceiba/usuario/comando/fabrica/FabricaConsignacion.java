@@ -5,16 +5,16 @@ import com.ceiba.usuario.modelo.entidad.Consignacion;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FabricaPersona {
+public class FabricaConsignacion {
 
-    public Consignacion crear(ComandoConsignacion comandoPersona){
+    public Consignacion crear(ComandoConsignacion comandoConsignacion){
         return new Consignacion(
-                comandoPersona.getId(),
-                comandoPersona.getNombre(),
-                comandoPersona.getApellido(),
-                comandoPersona.getTelefono(),
-                comandoPersona.getDireccion(),
-                comandoPersona.getIdentificacion(),
-                comandoPersona.getCantidadConsignada());
+                comandoConsignacion.getId(),
+                comandoConsignacion.getNombre(),
+                comandoConsignacion.getApellido(),
+                comandoConsignacion.getTelefono(),
+                comandoConsignacion.getDireccion(),
+                comandoConsignacion.getIdentificacion(),
+                comandoConsignacion.getCantidadConsignada());
     }
 }

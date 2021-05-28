@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComandoPersona {
+public class ComandoConsignacion {
 
     private Long id;
     private String nombre;

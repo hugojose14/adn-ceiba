@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.math.BigDecimal;
 
 @Getter
-public class Persona {
+public class Consignacion {
 
     private Long id;
     private String nombre;
@@ -15,7 +15,7 @@ public class Persona {
     private String identificacion;
     private BigDecimal cantidadConsignada;
 
-    public Persona(Long id, String nombre, String apellido, String telefono, String direccion, String identificacion, BigDecimal cantidadConsignada) {
+    public Consignacion(Long id, String nombre, String apellido, String telefono, String direccion, String identificacion, BigDecimal cantidadConsignada) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

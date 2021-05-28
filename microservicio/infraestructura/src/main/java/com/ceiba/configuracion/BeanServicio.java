@@ -1,9 +1,9 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
+import com.ceiba.usuario.puerto.repositorio.RepositorioConsignacion;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearPersonas;
+import com.ceiba.usuario.servicio.ServicioCrearConsignacion;
 import com.ceiba.usuario.servicio.ServicioCrearUsuario;
 import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
 import org.springframework.context.annotation.Bean;
@@ -28,8 +28,9 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioCrearPersonas servicioCrearPersonas(RepositorioPersona repositorioPersona){
-        return new ServicioCrearPersonas(repositorioPersona);
+    public ServicioCrearConsignacion servicioCrearPersonas(RepositorioConsignacion repositorioPersona){
+        System.out.println("prueba");
+        return new ServicioCrearConsignacion(repositorioPersona);
     }
 	
 

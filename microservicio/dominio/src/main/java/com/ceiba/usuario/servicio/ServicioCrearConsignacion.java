@@ -1,18 +1,18 @@
 package com.ceiba.usuario.servicio;
 
 import com.ceiba.usuario.modelo.entidad.Consignacion;
-import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
+import com.ceiba.usuario.puerto.repositorio.RepositorioConsignacion;
 
-public class ServicioCrearPersonas {
+public class ServicioCrearConsignacion {
 
-    private final RepositorioPersona personaRepositorio;
+    private final RepositorioConsignacion repositorioConsignacion;
 
-    public ServicioCrearPersonas(RepositorioPersona personaRepositorio){
-        this.personaRepositorio = personaRepositorio;
+    public ServicioCrearConsignacion(RepositorioConsignacion repositorioConsignacion){
+        this.repositorioConsignacion = repositorioConsignacion;
     }
 
-    public Long ejecutar(Consignacion persona){
-        return this.personaRepositorio.crear(persona);
+    public Long ejecutar(Consignacion consignacion){
+        return this.repositorioConsignacion.crear(consignacion);
     }
 
 
