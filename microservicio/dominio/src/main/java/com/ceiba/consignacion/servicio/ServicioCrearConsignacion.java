@@ -4,9 +4,6 @@ import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-import java.util.Optional;
 
 public class ServicioCrearConsignacion {
 

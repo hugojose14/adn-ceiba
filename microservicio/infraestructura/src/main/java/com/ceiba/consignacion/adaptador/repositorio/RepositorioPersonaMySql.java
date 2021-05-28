@@ -4,13 +4,9 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
-import java.util.Optional;
 
 @Repository
 public class RepositorioPersonaMySql implements RepositorioConsignacion {
