@@ -1,0 +1,1 @@
+select id,nombre,apellido,telefono,identificacion,cantidadConsignada, direccion from consignacion;

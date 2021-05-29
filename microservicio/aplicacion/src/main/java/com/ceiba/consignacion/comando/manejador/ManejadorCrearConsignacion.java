@@ -24,4 +24,6 @@ public class ManejadorCrearConsignacion implements ManejadorComandoRespuesta<Com
         Consignacion consignacion = this.fabricaConsignacion.crear(comandoConsignacion);
         return new ComandoRespuesta<>(this.servicioCrearConsignacion.ejecutar(consignacion));
     }
+
+
 }

@@ -2,8 +2,6 @@ package com.ceiba.consignacion.puerto.repositorio;
 
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 
-import java.math.BigDecimal;
-import java.util.Optional;
 
 public interface RepositorioConsignacion {
 
