@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)
 @WebMvcTest(ComandoControladorConsignacion.class)
-public class onsignacionTest {
+public class ComandoControllerConsignacionTest {
 
     @Autowired
     private ObjectMapper objectMapper;
