@@ -3,6 +3,8 @@ package com.ceiba.consignacion.controlador;
 import com.ceiba.ApplicationMock;
 import com.ceiba.consignacion.comando.ComandoConsignacion;
 import com.ceiba.consignacion.servicio.ComandoConsignacionTestDataBuilder;
+import com.ceiba.usuario.comando.ComandoUsuario;
+import com.ceiba.usuario.servicio.testdatabuilder.ComandoUsuarioTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -39,6 +42,19 @@ public class ComandoControllerConsignacionTest {
                 .content(objectMapper.writeValueAsString(comandoConsignacion)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 1}"));
+    }
+
+    @Test
+    public void actualizar() throws Exception{
+        // arrange
+        Long id = 2L;
+        ComandoConsignacion comandoConsignacion = new ComandoConsignacionTestDataBuilder().build();
+
+        // act - assert
+        mocMvc.perform(put("/consignaciones/{id}",id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(comandoConsignacion)))
+                .andExpect(status().isOk());
     }
 
 }

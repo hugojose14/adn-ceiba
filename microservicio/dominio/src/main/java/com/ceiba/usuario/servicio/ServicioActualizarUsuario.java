@@ -6,7 +6,7 @@ import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 
 public class ServicioActualizarUsuario {
 
-    private static final String EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA = "El usuario ya existe en el sistema";
+    private static final String LA_CONSIGNACION_YA_EXISTE_EN_EL_SISTEMA = "La consignacion ya existe en el sistema";
 
     private final RepositorioUsuario repositorioUsuario;
 
@@ -22,7 +22,7 @@ public class ServicioActualizarUsuario {
     private void validarExistenciaPrevia(Usuario usuario) {
         boolean existe = this.repositorioUsuario.existeExcluyendoId(usuario.getId(),usuario.getNombre());
         if(existe) {
-            throw new ExcepcionDuplicidad(EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA);
+            throw new ExcepcionDuplicidad(LA_CONSIGNACION_YA_EXISTE_EN_EL_SISTEMA);
         }
     }
 }

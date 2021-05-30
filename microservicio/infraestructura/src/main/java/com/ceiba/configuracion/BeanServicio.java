@@ -1,6 +1,7 @@
 package com.ceiba.configuracion;
 
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
+import com.ceiba.consignacion.servicio.ServicioActualizarConsignacion;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import com.ceiba.consignacion.servicio.ServicioCrearConsignacion;
@@ -31,6 +32,9 @@ public class BeanServicio {
     public ServicioCrearConsignacion servicioCrearPersonas(RepositorioConsignacion repositorioConsignacion){
         return new ServicioCrearConsignacion(repositorioConsignacion);
     }
-	
+	@Bean
+    public ServicioActualizarConsignacion servicioActualizarConsignacion(RepositorioConsignacion repositorioConsignacion){
+        return new ServicioActualizarConsignacion(repositorioConsignacion);
+    }
 
 }
