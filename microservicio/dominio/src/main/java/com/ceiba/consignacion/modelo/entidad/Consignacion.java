@@ -46,4 +46,8 @@ public class Consignacion {
         this.cantidadConsignada = cantidadConsignada;
     }
 
+    public void setCantidadConsignada(BigDecimal cantidadConsignada){
+        this.cantidadConsignada = cantidadConsignada;
+    }
+
 }
