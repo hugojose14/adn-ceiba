@@ -14,9 +14,9 @@ public class ServicioActualizarConsignacion {
         this.repositorioConsignacion = repositorioConsignacion;
     }
 
-    public Long ejecutar(Consignacion consignacion){
+    public void ejecutar(Consignacion consignacion){
         validarExisteciaPrevia(consignacion);
-        return this.repositorioConsignacion.crear(consignacion);
+        this.repositorioConsignacion.actualizar(consignacion);
     }
 
     private void validarExisteciaPrevia(Consignacion consignacion){

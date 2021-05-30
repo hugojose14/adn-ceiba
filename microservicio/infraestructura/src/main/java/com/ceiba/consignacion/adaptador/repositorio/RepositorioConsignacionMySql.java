@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class RepositorioPersonaMySql implements RepositorioConsignacion {
+public class RepositorioConsignacionMySql implements RepositorioConsignacion {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
@@ -19,8 +19,10 @@ public class RepositorioPersonaMySql implements RepositorioConsignacion {
     @SqlStatement(namespace = "consignacion", value ="existe")
     private static String sqlExiste;
 
+    @SqlStatement(namespace = "consignacion", value ="actualizar")
+    private static String sqlActualizar;
 
-    public RepositorioPersonaMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
+    public RepositorioConsignacionMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
 
@@ -30,12 +32,8 @@ public class RepositorioPersonaMySql implements RepositorioConsignacion {
     }
 
     @Override
-    public void actualizar(Consignacion persona) {
-
-    }
-
-    @Override
-    public void eliminar(Long id) {
+    public void actualizar(Consignacion consignacion) {
+        this.customNamedParameterJdbcTemplate.actualizar(consignacion, sqlActualizar);
 
     }
 

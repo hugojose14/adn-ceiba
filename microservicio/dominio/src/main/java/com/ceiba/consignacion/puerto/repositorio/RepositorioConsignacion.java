@@ -19,12 +19,6 @@ public interface RepositorioConsignacion {
     void actualizar(Consignacion consignacion);
 
     /**
-     * Permite eliminar un consignacion
-     * @param id
-     */
-    void eliminar(Long id);
-
-    /**
      * Permite validar si existe un usuario con un cedula
      * @param id
      * @return si existe o no
