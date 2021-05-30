@@ -5,7 +5,6 @@ import com.ceiba.consignacion.comando.fabrica.FabricaConsignacion;
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.servicio.ServicioActualizarConsignacion;
 import com.ceiba.manejador.ManejadorComando;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import org.springframework.stereotype.Component;
 
 @Component

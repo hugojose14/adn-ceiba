@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.consignacion.comando.ComandoConsignacion;
 import com.ceiba.consignacion.comando.manejador.ManejadorActualizarConsignacion;
 import com.ceiba.consignacion.comando.manejador.ManejadorCrearConsignacion;
-import com.ceiba.usuario.comando.ComandoUsuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
