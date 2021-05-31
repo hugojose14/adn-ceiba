@@ -21,4 +21,17 @@ public class ServicioActualizarConsignacionTest {
         // act - assert
         BasePrueba.assertThrows(() -> servicioActualizarConsignacion.ejecutar(consignacion), ExcepcionDuplicidad.class,"La consignación ya existe en el sistema");
     }
+
+    @Test
+    public void actualizar(){
+        // arrange
+        Consignacion consignacion = new ConsignacionTestDataBuilder().conId(1L).build();
+        RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
+        repositorioConsignacion.actualizar(consignacion);
+        ServicioActualizarConsignacion servicioActualizarConsignacion = new ServicioActualizarConsignacion(repositorioConsignacion);
+        servicioActualizarConsignacion.ejecutar(consignacion);
+        Mockito.verify(repositorioConsignacion,Mockito.times(2)).actualizar(consignacion);
+    }
+
+
 }

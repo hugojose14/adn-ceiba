@@ -25,12 +25,14 @@ public class ServicioCrearConsignacionTest {
     }
 
     @Test
-    public void ejecutar(){
+    public void crear(){
+        // arrange
         Consignacion consignacion = new ConsignacionTestDataBuilder().build();
         RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
         Mockito.when(repositorioConsignacion.crear(consignacion)).thenReturn(1L);
         ServicioCrearConsignacion servicioCrearConsignacion = new ServicioCrearConsignacion(repositorioConsignacion);
         Long id  = servicioCrearConsignacion.ejecutar(consignacion);
+        // act - assert
         Assertions.assertEquals(id, new Long(1L));
     }
 
