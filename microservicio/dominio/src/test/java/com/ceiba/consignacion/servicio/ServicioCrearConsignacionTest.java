@@ -7,7 +7,9 @@ import com.ceiba.consignacion.servicio.testdatabuilder.ConsignacionTestDataBuild
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
+
 
 public class ServicioCrearConsignacionTest {
 
@@ -21,6 +23,17 @@ public class ServicioCrearConsignacionTest {
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearConsignacion.ejecutar(consignacion), ExcepcionDuplicidad.class,"La consignacion ya existe en el sistema");
     }
+
+    @Test
+    public void ejecutar(){
+        Consignacion consignacion = new ConsignacionTestDataBuilder().build();
+        RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
+        Mockito.when(repositorioConsignacion.crear(consignacion)).thenReturn(1L);
+        ServicioCrearConsignacion servicioCrearConsignacion = new ServicioCrearConsignacion(repositorioConsignacion);
+        Long id  = servicioCrearConsignacion.ejecutar(consignacion);
+        Assertions.assertEquals(id, new Long(1L));
+    }
+
 
 
     @Test
