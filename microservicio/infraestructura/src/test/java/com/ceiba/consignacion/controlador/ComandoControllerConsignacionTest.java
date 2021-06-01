@@ -52,7 +52,7 @@ public class ComandoControllerConsignacionTest {
         mocMvc.perform(put("/consignaciones/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoConsignacion)))
-                .andExpect(status().isOk());
+                .andExpect(status().isBadRequest());
     }
 
 }

@@ -4,8 +4,8 @@ import com.ceiba.BasePrueba;
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 import com.ceiba.consignacion.servicio.testdatabuilder.ConsignacionTestDataBuilder;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
+import com.ceiba.dominio.excepcion.ExcepcionNoEncontrado;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -16,10 +16,10 @@ public class ServicioActualizarConsignacionTest {
         // arrange
         Consignacion consignacion = new ConsignacionTestDataBuilder().conId(1L).build();
         RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
-        Mockito.when(repositorioConsignacion.existe(Mockito.anyLong())).thenReturn(true);
+        Mockito.when(repositorioConsignacion.existe(Mockito.anyLong())).thenReturn(false);
         ServicioActualizarConsignacion servicioActualizarConsignacion = new ServicioActualizarConsignacion(repositorioConsignacion);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioActualizarConsignacion.ejecutar(consignacion), ExcepcionDuplicidad.class,"La consignación ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarConsignacion.ejecutar(consignacion), ExcepcionNoEncontrado.class,"La consignación no se se encuentra en el sistema");
     }
 
     @Test
@@ -27,10 +27,11 @@ public class ServicioActualizarConsignacionTest {
         // arrange
         Consignacion consignacion = new ConsignacionTestDataBuilder().conId(1L).build();
         RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
-        repositorioConsignacion.actualizar(consignacion);
+        Mockito.when(repositorioConsignacion.existe(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarConsignacion servicioActualizarConsignacion = new ServicioActualizarConsignacion(repositorioConsignacion);
         servicioActualizarConsignacion.ejecutar(consignacion);
-        Mockito.verify(repositorioConsignacion,Mockito.times(2)).actualizar(consignacion);
+        // act - assert
+        Mockito.verify(repositorioConsignacion,Mockito.times(1)).actualizar(consignacion);
     }
 
 

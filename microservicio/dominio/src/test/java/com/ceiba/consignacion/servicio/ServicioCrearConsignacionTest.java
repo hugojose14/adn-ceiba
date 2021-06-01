@@ -8,10 +8,17 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class ServicioCrearConsignacionTest {
+
+    @Captor
+    ArgumentCaptor<Consignacion> consignacionCaptor;
 
     @Test
     public void validarConsignacionExistenciaPreviaTest() {
@@ -34,6 +41,20 @@ public class ServicioCrearConsignacionTest {
         Long id  = servicioCrearConsignacion.ejecutar(consignacion);
         // act - assert
         Assertions.assertEquals(id, new Long(1L));
+    }
+
+    @Test
+    public void calcularDiaSemanaDeberiaRetornarCantidadConsignada(){
+        // arrange
+        Consignacion consignacion = new ConsignacionTestDataBuilder().build();
+        RepositorioConsignacion repositorioConsignacion = Mockito.mock(RepositorioConsignacion.class);
+        Mockito.when(repositorioConsignacion.crear(consignacion)).thenReturn(1L);
+        ServicioCrearConsignacion servicioCrearConsignacion = new ServicioCrearConsignacion(repositorioConsignacion);
+        // act - assert
+        servicioCrearConsignacion.ejecutar(consignacion);
+        Mockito.verify(repositorioConsignacion).crear(consignacionCaptor.capture());
+        Consignacion value  = consignacionCaptor.getValue();
+        Assertions.assertEquals(value.getCantidadConsignada(),consignacion.getCantidadConsignada());
     }
 
 

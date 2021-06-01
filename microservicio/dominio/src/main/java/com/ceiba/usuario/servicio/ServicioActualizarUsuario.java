@@ -6,7 +6,7 @@ import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 
 public class ServicioActualizarUsuario {
 
-    private static final String LA_CONSIGNACION_YA_EXISTE_EN_EL_SISTEMA = "La consignación ya existe en el sistema";
+    private static final String LA_CONSIGNACION_YA_EXISTE_EN_EL_SISTEMA = "El usuario ya existe en el sistema";
 
     private final RepositorioUsuario repositorioUsuario;
 
