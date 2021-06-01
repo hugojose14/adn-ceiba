@@ -4,11 +4,6 @@ import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
-import java.math.BigDecimal;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.ZoneId;
-
 public class ServicioCrearConsignacion {
 
     private final RepositorioConsignacion repositorioConsignacion;

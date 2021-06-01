@@ -2,19 +2,13 @@ package com.ceiba.consignacion.servicio;
 
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionNoEncontrado;
-
-import java.math.BigDecimal;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class ServicioActualizarConsignacion {
 
     private static final String LA_CONSIGNACION_EXISTE_EN_EL_SISTEMA = "La consignación no se se encuentra en el sistema";
-
-    private static final LocalDate FECHA_ACTUAL = LocalDate.now(ZoneId.of("America/Bogota"));
 
     private final RepositorioConsignacion repositorioConsignacion;
 
