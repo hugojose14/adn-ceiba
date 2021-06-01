@@ -3,8 +3,6 @@ package com.ceiba.consignacion.servicio;
 import com.ceiba.consignacion.modelo.entidad.Consignacion;
 import com.ceiba.consignacion.puerto.repositorio.RepositorioConsignacion;
 import com.ceiba.dominio.excepcion.ExcepcionNoEncontrado;
-import java.time.LocalDate;
-import java.time.ZoneId;
 
 public class ServicioActualizarConsignacion {
 
