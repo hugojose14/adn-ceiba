@@ -16,11 +16,11 @@ public class ComandoConsignacionTestDataBuilder {
     private BigDecimal cantidadConsignada;
 
     public ComandoConsignacionTestDataBuilder() {
-        nombre = UUID.randomUUID().toString();
-        apellido = UUID.randomUUID().toString();
-        telefono = UUID.randomUUID().toString();
-        direccion = UUID.randomUUID().toString();
-        identificacion = UUID.randomUUID().toString();
+        nombre = "Hugo";
+        apellido = "Pérez";
+        telefono = "3054705359";
+        direccion = "Cartagena";
+        identificacion = "123456789";
         cantidadConsignada = new BigDecimal(10000);
     }
 
