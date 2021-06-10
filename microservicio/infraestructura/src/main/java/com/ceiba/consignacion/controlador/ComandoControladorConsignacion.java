@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/consignaciones")
 @Api(tags = {"controlador para las consignaciones de los usuarios"})
-@CrossOrigin(value = "*")
 public class ComandoControladorConsignacion {
 
     private final ManejadorCrearConsignacion manejadorCrearConsignacion;

@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/consignaciones")
 @Api(tags = {"Controlador para la consulta de las consignaciones"})
-@CrossOrigin(value = "*")
 public class ConsultaControladorConsignacion {
 
     private final ManejadorListarConsignaciones manejadorListarConsignaciones;
