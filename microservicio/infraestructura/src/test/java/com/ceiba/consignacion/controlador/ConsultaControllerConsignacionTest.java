@@ -1,6 +1,7 @@
 package com.ceiba.consignacion.controlador;
 
 import com.ceiba.ApplicationMock;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -26,7 +27,7 @@ public class ConsultaControllerConsignacionTest {
     private MockMvc mocMvc;
 
     @Test
-    @Order(3)
+    @Ignore
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     public void listar() throws Exception {
 
