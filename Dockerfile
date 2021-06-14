@@ -1,7 +1,5 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE= microservicio/build/libs/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
-
-
+FROM openjdk:8
+ADD microservicio/build/libs/*.jar app.jar
+EXPOSE 8083
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
